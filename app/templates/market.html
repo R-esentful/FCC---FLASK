@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block tile %} Market Page {% endblock %} {% block body %}
+<h1>Market Page</h1>
+<table class="table table-hover table-dark">
+	<thead>
+		<tr>
+			<!-- Your Columns HERE -->
+			<th scope="col">ID</th>
+			<th scope="col">Name</th>
+			<th scope="col">Barcode</th>
+			<th scope="col">Price</th>
+			<th scope="col">Options</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- Your rows inside the table HERE: -->
+		<!-- The items here are refered to the app.py which are returned by the market_page route -->
+		{% for item in items %}
+		<tr>
+			<td>{{ item.id }}</td>
+			<td>{{ item.name }}</td>
+			<td>{{ item.barcode }}</td>
+			<td>{{ item.price }}$</td>
+			<td>
+				<button class="btn btn-outline btn-info">More Info</button>
+				<button class="btn btn-outline btn-success">Purchase this Item</button>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
