@@ -1,8 +1,8 @@
 """
 RE STRUCTURING OUR APPLICATION : MODELS (DATABASE QUERYING)
 """
-# Referenced from the APP/__init__.py  and import the variable "DB"
-from app import db
+# Referenced from the APP/__init__.py  and import the variable "DB","BCRYPT"
+from app import db,bcrypt
 
 """
 Create Model for querying. Always refer db.Model for database querying.
@@ -33,6 +33,21 @@ class User(db.Model):
 
     # One to Many Relationship
     items = db.relationship('Items',backref = 'owned_user',lazy= True)
+
+    # @property are the getters, setters and deleters
+    # create an instance in which we could use it for our routes
+    # this specific property is a "GETTER"
+    @property
+    def password(self):
+        return self.password
+
+    # creates a password setter for our instance
+    # this specific property is a "SETTER"
+    @password.setter
+    # function for setting password.
+    def password(self,plain_text_password):
+        # creates a hashed password using a specific hashing algorithm which is bcrypt 
+        self.password_hash = bcrypt.generate_password_hash(plain_text_password).decode('utf-8')
 
 # ITEMS Schema
 class Items(db.Model):
