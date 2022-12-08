@@ -9,12 +9,13 @@ Initilialize flask application by importing flask module
 
 Flask(for the main application),render_template (for rendering)
 SQLAlchemy(database)
+Flask Bcrypt ( for password hashing in saving to database )
 
 """
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_bcrypt import Bcrypt
 # Initialize application
 app = Flask(__name__)
 
@@ -32,6 +33,10 @@ app.config['SECRET_KEY'] = '7a7c78a19d7175a0b0d01f2d2d7bbf0e'
 
 # Initialize database and reference it to the application
 db = SQLAlchemy(app)
+
+# Initialize bcrypt and reference it to the application
+# CASE SENSITIVE!
+bcrypt = Bcrypt(app)
 
 
 # 
