@@ -1,24 +1,28 @@
 {% extends 'base.html' %} {% block title %} Register Page {% endblock %} {% block body %}
+<body class="text-center">
+	<div class="container">
+		<form action="" method="POST" class="form-register" style="color: white">
+			<!-- PROTECTS US FROM CSRF ATTACKS ( CROSS SITE REQUEST FORGERY ) -->
+			{{form.hidden_tag()}}
+			<img
+				class="mb-4"
+				src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png"
+				alt="" />
+			<h1 class="h3 mb-3 font-weight-normal">Please Create your Account</h1>
 
-<div class="container">
-	<form action="" method="POST" class="form-register text-center" style="color: white">
-		<img
-			class="mb-4"
-			src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png"
-			alt="" />
-		<h1 class="h3 mb-3 font-weight-normal">Please Create your Account</h1>
-		<!--USERNAME -->
-		{{form.username.label()}} {{form.username(class = 'form-control',placeholder = 'Username')}}
-		<!-- email  -->
-		{{form.email_address.label()}} {{form.email_address(class = 'form-control',placeholder = 'Email Address')}}
-		<!-- password1 -->
-		{{form.password1.label()}} {{form.password1(class = 'form-control',placeholder = 'Password')}}
-		<!-- password2 -->
-		{{form.password2.label()}} {{form.password2(class = 'form-control',placeholder = 'Confirm Password')}}
+			<!--USERNAME -->
+			{{form.username.label()}} {{form.username(class = 'form-control',placeholder = 'Username')}}
+			<!-- email  -->
+			{{form.email_address.label()}} {{form.email_address(class = 'form-control',placeholder = 'Email Address')}}
+			<!-- password1 -->
+			{{form.password1.label()}} {{form.password1(class = 'form-control',placeholder = 'Password')}}
+			<!-- password2 -->
+			{{form.password2.label()}} {{form.password2(class = 'form-control',placeholder = 'Confirm Password')}}
 
-		<!-- submit field -->
-		<br />
-		{{form.submit(class = 'btn btn-lg btn-block btn-primary')}}
-	</form>
-</div>
+			<!-- submit field -->
+			<br />
+			{{form.submit(class = 'btn btn-lg btn-block btn-primary')}}
+		</form>
+	</div>
+</body>
 {% endblock %}
