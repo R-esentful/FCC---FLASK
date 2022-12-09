@@ -10,12 +10,13 @@ Initilialize flask application by importing flask module
 Flask(for the main application),render_template (for rendering)
 SQLAlchemy(database)
 Flask Bcrypt ( for password hashing in saving to database )
-
+Flask Login (for login system )
 """
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 # Initialize application
 app = Flask(__name__)
 
@@ -38,6 +39,15 @@ db = SQLAlchemy(app)
 # CASE SENSITIVE!
 bcrypt = Bcrypt(app)
 
+# Initialize Login Manager and reference it to the application
+login_manager = LoginManager(app)
 
-# 
+# Redirects our users to the login page. This prevents access to specific contents. 
+login_manager.login_view = 'login_page'
+
+# Sets customized flash message category
+login_manager.login_message_category = 'info'
+
+
+# Refers to the routes.py 
 from app import routes
