@@ -1,0 +1,24 @@
+                                        ====================
+                                            IMPORTANT!
+                                        ====================
+click==8.1.3
+colorama==0.4.6
+dnspython==2.2.1
+email-validator==1.3.0                  Flask Email Validator
+Flask==2.2.2                            Flask Main Component
+Flask-Bcrypt==1.0.1                     Flask Password Hashing
+Flask-Login==0.6.2                      Flask Login Manager
+Flask-SQLAlchemy==3.0.2                 Flask Database connector
+Flask-WTF==1.0.1                        Flask Forms
+greenlet==2.0.1
+idna==3.4
+itsdangerous==2.1.2
+Jinja2==3.1.2               
+MarkupSafe==2.1.1
+mysql-connector==2.2.9                  MYSQL Connector
+mysql-connector-python==8.0.31          MYSQL Connector for Python
+protobuf==3.20.1
+PyMySQL==1.0.2                          Connect MYSQL for Python
+SQLAlchemy==1.4.44
+Werkzeug==2.2.2
+WTForms==3.0.1                          Flask Forms
